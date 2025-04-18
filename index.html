@@ -2,16 +2,15 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Stream Overlays by CreatineWaves</title>
+  <title>Custom Overlays by CreatineWaves</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      font-family: sans-serif;
+      font-family: 'Arial', sans-serif;
       background: #121212;
       color: #fff;
-      text-align: center;
       height: 100vh;
     }
 
@@ -43,36 +42,90 @@
     .content {
       position: relative;
       z-index: 1;
-      padding: 50px;
+      padding: 80px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #39ff14;
+      text-shadow: 0 0 12px #39ff14, 0 0 30px #39ff14;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin: 30px 0;
+      line-height: 1.8;
+      color: #f0f0f0;
+    }
+
+    h2 {
+      margin-top: 70px;
+      font-size: 2.5rem;
+      color: #39ff14;
+      text-shadow: 0 0 10px #39ff14;
+    }
+
+    .payment-links {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
     }
 
     a {
       color: #39ff14;
       text-decoration: none;
-      display: block;
-      margin: 10px 0;
-      font-size: 1.2em;
+      font-size: 1.5rem;
+      padding: 14px 30px;
+      border: 3px solid #39ff14;
+      border-radius: 10px;
+      text-shadow: 0 0 5px #39ff14;
+      box-shadow: 0 0 20px #39ff14;
+      transition: all 0.3s ease;
+      width: fit-content;
     }
+
+    a:hover {
+      background: #39ff14;
+      color: #121212;
+      text-shadow: none;
+      box-shadow: 0 0 30px #39ff14;
+    }
+
+    .contact {
+      margin-top: 60px;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Stars container -->
   <div class="stars"></div>
 
   <div class="content">
-    <h1>🎨 Custom Stream Overlays by CreatineWaves 🎮</h1>
-    <p>Upgrade your stream with clean, animated overlays!</p>
+    <h1>🎨 Custom Stream Overlays 🎮</h1>
+    <p>Upgrade your stream with clean, animated overlays designed to make your channel pop and stand out.  
+    Made by <strong>CreatineWaves</strong>, built for small streamers who want big-time style.</p>
 
     <h2>💸 Payment Options</h2>
-    <a href="https://cash.app/$CreatineWaves" target="_blank">💵 CashApp: $CreatineWaves</a>
-    <a href="https://paypal.me/CreatineWaves" target="_blank">💳 PayPal: CreatineWaves</a>
-    <a href="https://venmo.com/CreatineWaves" target="_blank">📲 Venmo: CreatineWaves</a>
+    <div class="payment-links">
+      <a href="https://cash.app/$CreatineWaves" target="_blank">💵 CashApp: $CreatineWaves</a>
+      <a href="https://paypal.me/CreatineWaves" target="_blank">💳 PayPal: CreatineWaves</a>
+      <a href="https://venmo.com/CreatineWaves" target="_blank">📲 Venmo: CreatineWaves</a>
+    </div>
 
-    <p>Contact: your-email@example.com</p>
+    <div class="contact">
+      📧 Contact me: your-email@example.com
+    </div>
   </div>
 
-  <!-- Star generator -->
   <script>
     const starsContainer = document.querySelector('.stars');
     const starCount = 150;
