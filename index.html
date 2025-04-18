@@ -12,12 +12,38 @@
       background: #121212;
       color: #fff;
       text-align: center;
-      position: relative;
+      height: 100vh;
     }
 
-    h1, p, a {
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .content {
       position: relative;
       z-index: 1;
+      padding: 50px;
     }
 
     a {
@@ -27,47 +53,37 @@
       margin: 10px 0;
       font-size: 1.2em;
     }
-
-    /* Star animations */
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 2s infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
   </style>
 </head>
 <body>
 
-  <h1>🎨 Custom Stream Overlays by CreatineWaves 🎮</h1>
-  <p>Upgrade your stream with clean, animated overlays!</p>
+  <!-- Stars container -->
+  <div class="stars"></div>
 
-  <h2>💸 Payment Options</h2>
-  <a href="https://cash.app/$CreatineWaves" target="_blank">💵 CashApp: $CreatineWaves</a>
-  <a href="https://paypal.me/CreatineWaves" target="_blank">💳 PayPal: CreatineWaves</a>
-  <a href="https://venmo.com/CreatineWaves" target="_blank">📲 Venmo: CreatineWaves</a>
+  <div class="content">
+    <h1>🎨 Custom Stream Overlays by CreatineWaves 🎮</h1>
+    <p>Upgrade your stream with clean, animated overlays!</p>
 
-  <p>Contact: your-email@example.com</p>
+    <h2>💸 Payment Options</h2>
+    <a href="https://cash.app/$CreatineWaves" target="_blank">💵 CashApp: $CreatineWaves</a>
+    <a href="https://paypal.me/CreatineWaves" target="_blank">💳 PayPal: CreatineWaves</a>
+    <a href="https://venmo.com/CreatineWaves" target="_blank">📲 Venmo: CreatineWaves</a>
 
-  <!-- Star generator script -->
+    <p>Contact: your-email@example.com</p>
+  </div>
+
+  <!-- Star generator -->
   <script>
-    // create 150 stars randomly positioned
+    const starsContainer = document.querySelector('.stars');
     const starCount = 150;
+
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
       star.style.top = Math.random() * window.innerHeight + 'px';
       star.style.left = Math.random() * window.innerWidth + 'px';
       star.style.animationDuration = (1 + Math.random() * 3) + 's';
-      document.body.appendChild(star);
+      starsContainer.appendChild(star);
     }
   </script>
 
